@@ -11,11 +11,13 @@ def list_books():
         status = "Available" if details["available"] else "Borrowed"
         print(f"{title} by {details['author']} - {status}")
 
-
 def show_menu():
     print("\n=== Library Tracker ===")
+    print("1. Add book")
+    print("2. List books")
+    print("3. Borrow book")
+    print("4. Return book")
     print("0. Exit")
-
 
 def main():
     while True:
