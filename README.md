@@ -9,4 +9,7 @@ A command-line program for tracking library books.
 - Return Book: Allows users to return borrowed books.
 
 ## Contributors
+feature/return-book
 - inayat ullah (Maintainer)
+-ibrar ahmad
+- Return borrowed books and mark them as available.
