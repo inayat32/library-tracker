@@ -2,6 +2,14 @@
 # A simple command-line library tracker.
 
 books = {}  # title -> {"author": str, "available": bool}
+def list_books():
+    if not books:
+        print("No books in the library.")
+        return
+
+    for title, details in books.items():
+        status = "Available" if details["available"] else "Borrowed"
+        print(f"{title} by {details['author']} - {status}")
 
 
 def show_menu():
