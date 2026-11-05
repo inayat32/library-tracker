@@ -8,3 +8,5 @@ A command-line program for tracking library books.
 
 ## Contributors
 - inayat ullah (Maintainer)
+-ibrar ahmad
+- Return borrowed books and mark them as available.
