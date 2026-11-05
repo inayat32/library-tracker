@@ -1,4 +1,10 @@
+
 # Library Tracker
+
 A command-line program for tracking library books.
-## Features- (none yet)
-## Contributors     
+
+## Features
+- Add Book: Allows users to add a book by entering its title and author.
+
+## Contributors
+- inayat ullah (Maintainer)
