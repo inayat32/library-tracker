@@ -1,19 +1,20 @@
 
+# library.py
 # A simple command-line library tracker.
 
 books = {}  # title -> {"author": str, "available": bool}
 
 
 def add_book():
-    title = input("Enter book title: ").strip()
-    author = input("Enter author name: ").strip()
+    title = input("Title: ").strip()
+    author = input("Author: ").strip()
 
     if not title or not author:
         print("Title and author cannot be empty.")
         return
 
     if title in books:
-        print("This book already exists.")
+        print(f'"{title}" is already in the library.')
         return
 
     books[title] = {
@@ -21,7 +22,7 @@ def add_book():
         "available": True
     }
 
-    print(f"Book '{title}' added successfully!")
+    print(f'Added "{title}".')
 
 
 def list_books():
@@ -35,35 +36,45 @@ def list_books():
 
 
 def borrow_book():
-    title = input("Enter book title to borrow: ").strip()
+    title = input("Title: ").strip()
 
-    if title not in books:
-        print("Book not found.")
+    if not title:
+        print("Title cannot be empty.")
+
+    elif title not in books:
+        print(f'No book titled "{title}".')
+
     elif not books[title]["available"]:
-        print("Book is already borrowed.")
+        print(f'"{title}" is already borrowed.')
+
     else:
         books[title]["available"] = False
-        print("Book borrowed successfully.")
+        print(f'You borrowed "{title}".')
 
 
 def return_book():
-    title = input("Enter book title to return: ").strip()
+    title = input("Title: ").strip()
 
-    if title not in books:
-        print("Book not found.")
+    if not title:
+        print("Title cannot be empty.")
+
+    elif title not in books:
+        print(f'No book titled "{title}".')
+
     elif books[title]["available"]:
-        print("Book is already available.")
+        print(f'"{title}" is not borrowed.')
+
     else:
         books[title]["available"] = True
-        print("Book returned successfully.")
+        print(f'You returned "{title}".')
 
 
 def show_menu():
     print("\n=== Library Tracker ===")
-    print("1. Add Book")
-    print("2. List Books")
-    print("3. Borrow Book")
-    print("4. Return Book")
+    print("1. Add book")
+    print("2. List books")
+    print("3. Borrow book")
+    print("4. Return book")
     print("0. Exit")
 
 
