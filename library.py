@@ -35,6 +35,7 @@ def list_books():
         print(f"{title} by {details['author']} - {status}")
 
 
+# Borrow Book Feature
 def borrow_book():
     title = input("Title: ").strip()
 
@@ -52,6 +53,7 @@ def borrow_book():
         print(f'You borrowed "{title}".')
 
 
+# Return Book Feature
 def return_book():
     title = input("Title: ").strip()
 
